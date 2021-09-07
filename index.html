@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+    user-scale=no, initial-scale=1, maximun-sacale=1, minimum-scale=1">
+    <title>Luis - Web developer</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+    <header>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+      <a href="index.html" id="inicio">
+      <div class="wraper">
+          <img id="logo" src="./img/coding.png" />
+          <h1 id="wb">Web developer</h1>
+          <h2 id="lc">Luis Carlos Pulido Martinez</h2>
+      </div>
+      </a>
+      <script>
+        gsap.to('#logo', {
+            duration: 5,
+             y: -300,
+             ease: 'bounce'
+        });
+        
+        gsap.to('#lc', {
+            duration: 3,
+             y: -100,
+             ease: 'bounce'
+        });
+        
+        gsap.to('#wb', {
+            duration: 3,
+             y: -100,
+             ease: 'bounce'
+             
+        });
+      </script>
+      <nav>
+        <ul>
+          <li><a href="#portafolio" >Portafolio</a></li>
+          <li><a href="#acerca_de">Acerca de</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <a name="portafolio"></a>
+    <div id="wrapper" name="portafolio">
+      <h3 id="sub_t">PORTAFOLIO</h3>
+      <section>
+        <ul id="galeri">
+          <li>
+            <a href="img/web1.png">
+              <img src="img/web1.png" alt="web_biciletas" id="bike">
+            </a>
+           <p>Proyecto de Maquetacion basica<br>
+            <a href="https://github.com/luchocarlos/web_bicicleta" target="_blank"><img class="rp" src="./img/github.png"/> </a>
+            <a href="https://luchocarlos.github.io/web_bicicleta/?" target="_blank"><img class="rp" src="./img/visual.png"/> </a>
+          </p>
+          
+          </li>
+          <li>
+            <a href="img/contacgroup.png">
+              <div class="slider">
+                <ul>
+                    <li><img src="./img/contacgroup_1.png" alt="contacgroup"></li>
+                    <li><img src="./img/contacgroup_2.png" alt="contacgroup"></li>
+                    <li><img src="./img/contacgroup_3.png" alt="contacgroup"></li>
+                </ul>
+               </div>
+              </a>
+               <p>Proyecto Empresarial <br>
+                <a href="https://github.com/luchocarlos/contacgroup" target="_blank"><img class="rp" src="./img/github.png"/> </a>
+                <a href="img/contacgroup.png" target="_blank"><img class="rp" src="./img/visual.png"/> </a>
+              </p>
+            
+          </li>
+          <li>
+            <a href="img/fondo_animado.png">
+              <img src="img/fondo_animado.png" alt="web_fondoanimado" id="fondo_animado">
+            </a>
+           <p>Proyecto de Fondo Animado<br>
+            <a href="https://github.com/luchocarlos/fondo_animado" target="_blank"><img class="rp" src="./img/github.png"/> </a>
+            <a href="https://luchocarlos.github.io/fondo_animado/" target="_blank"><img class="rp" src="./img/visual.png"/> </a>
+          </p>
+          
+          </li>
+
+          <li>
+            <a href="img/firstgame.png">
+              <img src="img/firstgame.png" alt="web_game" id="game">
+            </a>
+           <p>Proyecto Juego de memoria<br>
+            <a href="https://github.com/luchocarlos/first_game" target="_blank"><img class="rp" src="./img/github.png"/> </a>
+            <a href="https://luchocarlos.github.io/first_game/" target="_blank"><img class="rp" src="./img/visual.png"/> </a>
+          </p>
+          
+          </li>
+
+        </ul>
+      </section>
+  </div>
+  <div id="wrapper_2">
+      <a name="acerca_de"></a>
+      <h3>Acerca de</h3>
+      <div class="foto">
+      <img src="img/photo_web.jpg">
+      <p>Soy una persona con gran actitud y ambicion para el desarrollo web,<br>
+         esta es una muestra de mi potencial para el desarrollo web.<br>
+         Web developer.
+      </p>
+    </div>
+      
+      <h5>Habilidades</h5>
+      <div class="habili">
+      <img src="img/javascript.png" alt="javaScript" class="habili">
+      <img src="img/html.png" alt="html" class="habili">
+      <img src="img/css.png" alt="css" class="habili">
+      <img src="img/codigo-php.png" alt="php" class="habili">
+      <img src="img/sql.png" alt="sql" class="habili">
+      <img src="img/c++.png" alt="c++" class="habili">
+      <img src="img/react.png" alt="react" class="habili">
+    </div>
+  </div>
+  <script>
+  let tl = gsap.timeline({ repeat: -1, yoyo: true });
+         tl.from(".habili", {
+          duration: 2,
+          scale: 0.5, 
+          opacity: 0, 
+          delay: 0.5, 
+          stagger: 0.2,
+          ease: "elastic", 
+          force3D: true
+   });
+
+  </script>
+  <div id="wrapper_3">
+     <a name="contacto"></a>
+     <h4>Contacto</h4>
+      <p class="contacto"><img src="img/telefono.png" alt="telefono" class="izq">
+        <img src="img/correo.png" alt="correo" class="der">
+        <div id="contac"></div>
+       </p>
+
+  </div>
+  <script>
+
+    var contac = document.querySelector("#contac");
+    
+        gsap.to(".izq", {
+        duration: 10,
+        x: 320,
+        onComplete: showMessage, 
+        onCompleteParams: ["Movil: 57+ 3108871098"],
+        delay: 1
+        });
+        gsap.to(".der", {
+        duration: 10,
+        x: -320, 
+        onComplete: showMessage, 
+        onCompleteParams: ["E-mail: luchopulimar@gmail.com"],
+        delay: 5
+        });
+
+        function showMessage(message) {
+        contac.innerHTML += message + "</br>";
+        }
+</script>
+
+     <footer>
+      <a href="https://github.com/luchocarlos" target="_blank"> <img src="img/github.png" alt="github" class="social">  </a>
+      <a href="https://devchallenges.io/portfolio/luchocarlos" target="_blank"> <img src="img/dev.png" alt="dev" class="social" id="devchallenges"> </a>
+      <a href="https://www.sololearn.com/profile/17380745" target="_blank"> <img src="img/sololearn.png" alt="Sololearn" class="social" id="sololearn"></a>
+      
+      <p>&copy; 2021 Luis Carlos Pulido Martinez</p>
+    </footer>
+    
+  </body>
+</html>
